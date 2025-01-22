@@ -1,15 +1,137 @@
 import 'package:flutter/material.dart';
-
-class SigninUI extends StatefulWidget {
-  const SigninUI({super.key});
-
+ 
+class LoginUI extends StatefulWidget {
+  const LoginUI({super.key});
+ 
   @override
-  State<SigninUI> createState() => _SigninUIState();
+  State<LoginUI> createState() => _LoginUIState();
 }
-
-class _SigninUIState extends State<SigninUI> {
+ 
+class _LoginUIState extends State<LoginUI> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: EdgeInsets.only(
+          left: 35.0,
+          right: 35.0,
+        ),
+        child: Center(
+          child: Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.025,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                    size: MediaQuery.of(context).size.height * 0.045,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  height: MediaQuery.of(context).size.height * 0.2,
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Welcome Back,',
+                  style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.height * 0.038,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Make it work, make it right, make it fast.',
+                  style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.height * 0.017,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 110, 109, 109),
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 110, 109, 109),
+                    ),
+                  ),
+                  prefixIcon: Icon(
+                    Icons.person_2_outlined,
+                    color: Colors.grey[600],
+                  ),
+                  hintText: 'E-Mail',
+                  hintStyle: TextStyle(
+                    color: Colors.grey[600],
+                  ),
+                  // isDense: true,
+                  isCollapsed: true,
+                  contentPadding: EdgeInsets.symmetric(
+                    vertical: 25.0,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.01,
+              ),
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 110, 109, 109),
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 110, 109, 109),
+                    ),
+                  ),
+                  prefixIcon: Icon(
+                    Icons.fingerprint,
+                    color: Colors.grey[600],
+                  ),
+                  hintText: 'Password',
+                  hintStyle: TextStyle(
+                    color: Colors.grey[600],
+                  ),
+                  // isDense: true,
+                  isCollapsed: true,
+                  contentPadding: EdgeInsets.symmetric(
+                    vertical: 25.0,
+                  ),
+                  suffixIcon: Icon(
+                    Icons.visibility,
+                    color: Colors.grey[600],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -48,7 +48,16 @@ class _WelcomeUIState extends State<WelcomeUI> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //เปิดแบบย้อนกลีับได้
+                    Navigator.push(
+                      context
+                      MaterialPageRoute(
+                        builder: (context) => LoginUi(),
+                      )
+                    );
+                    
+                  },
                   child: Text(
                     'LOGIN',
                     style: TextStyle(

@@ -19,7 +19,7 @@ class _IOTSAUFirstMobileState extends State<IOTSAUFirstMobile> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:WelcomeUI(),
+      home:LoginUI(),
     );
   }
 }
